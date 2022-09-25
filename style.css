@@ -9,7 +9,7 @@
 }
 
 html {
-    font-size: 10pt;
+    font-size: 9pt;
 }
 
 body {
@@ -17,10 +17,10 @@ body {
     display: flex;
     font-family: 'Source Code Pro', syriac;
     width: 100vw;
-    /* height: fit-content; */
-    gap: 3rem;
+    gap: 5rem;
+    padding: 0rem 8rem;
+    box-sizing: border-box;
     justify-content: center;
-    /* position: relative; */
 }
 
 table {
@@ -38,12 +38,16 @@ p {
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin: 1rem 0rem 0.75rem 0rem;
 }
 
 .section {
-    padding-top: 6rem;
+    padding-top: 3rem;
+}
+
+.section p {
+    /* margin-bottom: 2rem; */
 }
 
 
@@ -57,11 +61,17 @@ h1 {
 
 h2 {
     font-size: 1.2rem;
-    margin: 1.25rem 0rem 0.5rem 0rem;
+    margin: 1.75rem 0rem 0.5rem 0rem;
 }
 
 ul {
-    margin: 0;
+    margin: 0rem;
+    margin-top: 0.25rem;
+    list-style-type: square;
+}
+
+ul li {
+    margin-bottom: 0.1rem;
 }
 
 a {
@@ -93,8 +103,8 @@ a:hover {
     width: 100%;
 }
 
-#side #name {
-    font-size: 2.25rem;
+#name {
+    font-size: 2.25em;
     font-weight: bold;
     margin: 0.5rem 0rem 0.5rem 0rem;
     height: 3rem;
@@ -103,14 +113,15 @@ a:hover {
 }
 
 #side h2 {
-    margin: 1.5rem 0rem 0.5rem 0rem;
+    margin: 1.5rem 0rem 0.25rem 0rem;
     line-height: 1em;
 }
 
 #side h2 .desc {
-    font-size: 0.75em;
-    /* font-weight: normal; */
+    font-size: 0.7em;
+    line-height: 1.1em;
     font-style: italic;
+    /* font-weight: normal; */
 }
 
 #side table tr {
@@ -125,16 +136,15 @@ a:hover {
 
 
 #main {
-    width: 50rem;
-    min-width: 50rem;
+    width: 45rem;
+    min-width: 45rem;
+    padding-right: 5rem;
     height: min-content;
     display: flex;
     flex-direction: column;
-    padding-right: 5rem;
 }
 
 #nav {
-    /* border-bottom: 0.2rem solid black; */
     background-color: white;
     display: flex;
     gap: 3em;
@@ -146,7 +156,7 @@ a:hover {
 #nav a {
     color: black;
     font-weight: bold;
-    /* text-decoration: none; */
+    text-decoration: none;
     text-decoration-thickness: 0.1rem;
 }
 
@@ -158,40 +168,25 @@ a:hover {
     padding-right: 1.5rem;
 }
 
-
 #about table th {
     text-align: center;
 }
 
 #about table td {
-    border: 0.1rem solid black;
-    width: 30%
-    /* border-bottom-width: 0.15rem; */
+    border: 0.15rem solid black;
+    width: 32%;
+    padding: 0.5rem 1rem;
+    background: white;
+    box-shadow: 0.6rem 0.6rem 0rem 0rem black;
+    transition: all 200ms;
 }
 
-/* table td, table th {
-    border: 1px solid black;
-  }
-  table tr:first-child th {
-    border-top: 0;
-  }
-  table tr:last-child td {
-    border-bottom: 0;
-  }
-  table tr td:first-child,
-  table tr th:first-child {
-    border-left: 0;
-  }
-  table tr td:last-child,
-  table tr th:last-child {
-    border-right: 0;
-  } */
+/* #about table td:hover {
+    box-shadow: 0.8rem 0.8rem 0rem 0rem black;
+} */
 
-
-
-#courses table {
-    /* table-layout: fixed; */
-    margin-top: 2rem;
+#about table tr:last-child {
+    /* box-shadow: 0.6rem 0.6rem 0rem 0rem black;    */
 }
 
 #courses table tr {
@@ -205,12 +200,11 @@ a:hover {
 #courses table td {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    vertical-align: baseline;
+    /* vertical-align: baseline; */
     border-top: 0.1rem solid black;
 }
 
 #courses table th {
-    font-size: 1.2rem;
     padding: 1rem;
     margin: 1rem;
     background: black;
@@ -220,10 +214,88 @@ a:hover {
 
 #courses table td:first-child {
     font-weight: bold;
-    /* font-style: italic; */
-    /* padding-right: 0.5em; */
 }
 
 .hide {
     display: none;
+}
+
+
+@media (max-width: 45rem) {
+    html {
+        font-size: 8pt;
+    }
+
+    body {
+        padding: 0;
+        gap: 2rem;
+    }
+
+    #nav {
+        gap: 2rem;
+    }
+
+    #main {
+        width: fit-content;
+        min-width: auto;
+        padding-right: 4rem;
+        justify-content: baseline;
+    }
+}
+  
+
+
+@media (pointer:none), (pointer:coarse) {
+    html {
+        font-size: 10pt;
+    }
+
+    body {
+        flex-direction: column;
+        padding: 2rem;
+        width: 100vw;
+    }
+
+    #side {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        position: static;
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        padding: 0;
+    }
+
+    #face {
+        width: 12rem;
+        text-align: right;
+        font-size: 0.7em;
+    }
+
+    #name {
+        height: 2rem;
+        min-height: 2rem;
+        line-height: 2rem;
+    }
+
+    #details {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    .detail > :not(h2) {
+        display: none;
+    }
+
+    #nav {
+        justify-content: space-between;
+    }
+
+    #main {
+        width: 100%;
+        min-width: 100%;
+        padding: 0;
+    }
 }

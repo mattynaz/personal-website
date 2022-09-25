@@ -6,370 +6,304 @@
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@700&family=Source+Code+Pro:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
     </head>
-    <div id="side">
-        <img src="pic.png">
-        <h1 id="name">Matthew Nazari</h1>
-        <script>
-            names = [
-                'Matthew Nazari',
-                'ܡܬܝ ܢܙܪܝ̣',
-                'متیو نظری',
-                'Մեթյու Նազարյան',
-            ]
+    <body>
+        <div id="side">
+            <div id="face">
+                <img src="pic.png">
+                <h1 id="name">Matthew Nazari</h1>
+            </div>
 
-            fontSizes = [2.25, 5, 3.5, 2.25]
+            <div id="details">
+                <div class="detail">
+                    <h2>Undergraduate<br><span class="desc">@Harvard University</span></h2>
+                    <table>
+                        <tr>  <td>M.S.</td>  <td>Computer Science</td>          <td></td>        </tr>
+                        <tr>  <td style="padding-bottom: 0.1rem"></td>                          </tr>
+                        <tr>  <td>B.A.</td>  <td>Computer Science</td>          <td>double</td>  </tr>
+                        <tr>  <td></td>      <td>& Near Eastern Languages</td>  <td>double</td>  </tr>
+                        <tr>  <td></td>      <td>& Linguistics</td>             <td>minor</td>   </tr>
+                    </table>
+                </div>
 
-            const nameElem = document.querySelector('#side #name')
-            
-            const deleteName = async _ => {
-                let intervalId = null
-                intervalId = setInterval(_ => {
-                    if (nameElem.innerText) {
-                        nameElem.innerText = nameElem.innerText.slice(0, -1)
-                    } else {
-                        clearInterval(intervalId)
-                    }
-                }, 50)
-            }
+                <div class="detail">
+                    <h2>AI Researcher<br><span class="desc">@Harvard SEAS</span></h2>
+                    <p>Researcher at <a href="https://dtak.github.io/">DtAK Group</a> advised by Professors <a href="http://https://finale.seas.harvard.edu/" target="_blank">Finale Doshi-Velez</a> and <a href="https://onefishy.github.io/" target="_blank">Weiwei Pan</a></p>
+                </div>
 
-            const typeName = async name => {
-                let intervalId = null
-                intervalId = setInterval(_ => {
-                    if (name) {
-                        let toAppend = ''
-                        while (toAppend === ' ' || toAppend === '') {
-                            toAppend = toAppend + name.charAt(0)
-                            name = name.slice(1)
-                        }
-                        nameElem.innerText = nameElem.innerText + toAppend
-                    } else {
-                        clearInterval(intervalId)
-                    }
-                }, 50)
-            }
-
-            let iteration = 0
-            setInterval(_ => {
-                iteration = (iteration + 1) % names.length
-                deleteName()
-                setTimeout(_ => {
-                        nameElem.style.fontSize = fontSizes[iteration] + 'em'
-                        typeName(names[iteration])
-                    }
-                , 1000)
-            }, 7000)
-        </script>
-
-        <h2>Undergraduate<br><span class="desc">@Harvard University</span></h2>
-        <table>
-            <tr>  <td>M.S.</td>  <td>Computer Science</td>          <td></td>        </tr>
-            <tr>  <td style="padding-bottom: 0.15rem"></td>                          </tr>
-            <tr>  <td>B.A.</td>  <td>Computer Science</td>          <td>double</td>  </tr>
-            <tr>  <td></td>      <td>& Near Eastern Languages</td>  <td>double</td>  </tr>
-            <tr>  <td></td>      <td>& Linguistics</td>             <td>minor</td>   </tr>
-        </table>
-
-        <h2>AI Researcher<br><span class="desc">@Harvard SEAS</span></h2>
-        <p>
-            Researcher at <a href="https://dtak.github.io/">DtAK Group</a> advised by Professor <a href="http://https://finale.seas.harvard.edu/" target="_blank">Finale Doshi-Velez</a> and Professor <a href="https://onefishy.github.io/" target="_blank">Weiwei Pan</a>
-        </p>
-
-        <h2>Language<br>Conservationalist<br><span class="desc">@University of Cambridge</span></h2>
-        <p>
-            Researcher at <a href="https://nena.ames.cam.ac.uk/" target="_blank">NENA Database Project</a>, advised by <a href="https://www.ames.cam.ac.uk/people/professor-geoffrey-khan" target="_blank">Geoffrey Khan</a>
-        </p>
-    </div>
-    <div id="main">
-        <div id="nav">
-            <a href="#about">What I'm Up To</a>
-            <a href="#courses">Courses</a>
-            <a href="#assyrian">Assyrian</a>
+                <div class="detail">
+                    <h2>Preservationist<br>& NLP Scientist<br><span class="desc">@University of Cambridge</span></h2>
+                    <p>Researcher at <a href="https://nena.ames.cam.ac.uk/" target="_blank">NENA Database Project</a>, advised by <a href="https://www.ames.cam.ac.uk/people/professor-geoffrey-khan" target="_blank">Geoffrey Khan</a></p>
+                </div>
+            </div>
         </div>
-        <div id="about" class="section">
-            <h1>What I'm doing</h1>
+        <div id="main">
+            <script></script>
+            <div id="nav">
+                <a onclick="switchSection('about')" href="#">About Me</a>
+                <a onclick="switchSection('upto')" href="#">What I'm Up To</a>
+                <a onclick="switchSection('courses')" href="#">Courses</a>
+                <a onclick="switchSection('assyrian')" href="#">Assyrian</a>
+            </div>
 
-            <!-- <table>
-                <tr>
-                    <th>Computer Science</th>
-                    <th>both</th>
-                    <th>Linguisics</th>
-                </tr>
-                <tr>
-                    <td>Machine Learning</td>
-                    <td>Preserving Neo-Aramaic</td>
-                    <td>Documentation and Linguistics</td>
-                </tr>
-            </table> -->
+            <div id="about" class="section">
+                <h1>About myself</h1>
+                <br>
+                <p>I'm studying to one day do a PhD. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <br>
+                <br>
+                <table>
+                    <tr>
+                        <th>Computer Science</th>
+                        <th>and</th>
+                        <th>Linguisics</th>
+                    </tr>
+                    <tr>
+                        <td>Researching and educating human-centric AI</td>
+                        <td>The preservation and revitalization of Assyrian Neo-Aramaic</td>
+                        <td>Fieldwork methods and Aramaic grammar</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <h2>This and That</h2>
+                <p>I'm studying to one day do a PhD. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h2>This and That</h2>
+                <p>I'm studying to one day do a PhD. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
 
-            <h2>AI and Machine Learning</h2>
-            I'm studying to one day do a PhD. I finished my M.S. requirements Sophomore year and since then have been focussing on applied projects, lab research, teaching, and peer-advising.
-            <ul>
-                <li>Mentoring a team of Graduate <a href="https://iacs.seas.harvard.edu/" target="_blank">Harvard IACS</a> students on their final data science capstone projects as a Teaching Fellow for <a href="https://iacs.seas.harvard.edu/file/3840383" target="_blank">AC 297</a></li>
-                <li>Researching Bayesian model selection</li>
-                <li>Captain of the <a href="https://csadvising.seas.harvard.edu/advising/pca/" target="_blank">Peer Concentration Advising</a> team</li>
-            </ul>
+            <div id="upto" class="section">
+                <h1>What I'm up to right now</h1>
 
-            <h2>Language Conservation</h2>
+                <h2>AI and Machine Learning</h2>
+                <p>
+                    This semester I am focussing on teaching, lab research, and peer-advising:
+                </p>
+                <ul>
+                    <li>Mentoring a team of Graduate <a href="https://iacs.seas.harvard.edu/" target="_blank">Harvard IACS</a> students on their final data science capstone projects as a Teaching Fellow for <a href="https://iacs.seas.harvard.edu/file/3840383" target="_blank">AC 297</a></li>
+                    <li>Researching Bayesian model selection</li>
+                    <li>Captain of the <a href="https://csadvising.seas.harvard.edu/advising/pca/" target="_blank">Peer Concentration Advising</a> team</li>
+                </ul>
 
-            On the language conservation side of things, I am 
-            <ul>
-                <li>Learning Classical Syriac</li>
-                <li>Documenting the grammatical features of the Neo-Aramaic Dialect of the Chaldeans of Sanandaj</li>
-            </ul>
+                <h2>Language Conservation</h2>
+                <p>
+                    On the language conservation side of things, I am 
+                </p>
+                <ul>
+                    <li>Learning Classical Syriac</li>
+                    <li>Documenting the grammatical features of the Neo-Aramaic Dialect of the Chaldeans of Sanandaj</li>
+                </ul>
 
-            <h2>The Intersection</h2>
-            <ul>
-                <li>Building speech and translation datasets for Neo-Aramaic through crowdsourcing</li>
-                <li>Developing a pan-dialectal morphological and syntactic glosser for Neo-Aramaic</li>
-            </ul>
-        </div>
+                <h2>The Intersection</h2>
+                <ul>
+                    <li>Building speech and translation datasets for Neo-Aramaic through crowdsourcing</li>
+                    <li>Developing a pan-dialectal morphological and syntactic glosser for Neo-Aramaic</li>
+                </ul>
+            </div>
 
-        <div id="courses" class="section">
-            <h1>Courses</h1>
-            <p>Matthew takes a lot of courses. Historically, he has found Harvard's graduate machine learning courses most interesting. Since completing the requirements for his Master's degree in his Sophomore year, he's stepped away from a heavy workload to focus on his linguistics research and his Junior thesis.</p>
-            <br>
-            <p><b>*</b> indicates graduate level</p>
-            <table>
-                <colgroup>
-                    <col style="width:8em">
-                    <col style="width:max-context">
-                    <col style="width:8em; text-align: right;">
-                    </colgroup>                    
-                <tr onclick="hideCourses('f22')">
-                    <th colspan="3">Fall 2022</th>
-                </tr>
-                <tr class="f22">
-                    <td>*CS288</td>
-                    <td>AI for Social Impact</td>
-                    <td></td>
-                </tr>
-                <tr class="f22">
-                    <td>*CS299r</td>
-                    <td>Special Topics in Computer Science</td>
-                    <td></td>
-                </tr>
-                <tr class="f22">
-                    <td>EMR152</td>
-                    <td>Memory and Diaspora</td>
-                    <td></td>
-                </tr>
-                <tr class="f22">
-                    <td>LING91r</td>
-                    <td>Supervised Reading and Research</td>
-                    <td></td>
-                </tr>
-                <tr class="f22">
-                    <td>MODMDEST103</td>
-                    <td>History of Modern Iran</td>
-                    <td></td>
-                </tr>
-                <tr class="f22">
-                    <td>NEC91r</td>
-                    <td>Advanced Neo-Aramaic Morphology and Syntax</td>
-                    <td></td>
-                </tr>
-                <tr class="f22">
-                    <td>NEC98a</td>
-                    <td>Tutorial - Junior Year</td>
-                    <td></td>
-                </tr>
-                <tr class="f22">
-                    <td>SYRIAC AA</td>
-                    <td>Elementary Syriac I</td>
-                    <td></td>
-                </tr>
-                <tr><td style="border: none; padding-bottom: 1rem"></td></tr>
-
-
-                <tr onclick="hideCourses('s22')">
-                    <th colspan="3">Spring 2022</th>
-                </tr>
-                <tr class="s22">
-                    <td>*CS205</td>
-                    <td>High Performance Computing for Science and Engineering</td>
-                    <td></td>
-                </tr>
-                <tr class="s22">
-                    <td>*CS231</td>
-                    <td>Quantum Computation and Quantum Complexity</td>
-                    <td></td>
-                </tr>
-                <tr class="s22">
-                    <td>*CS282r</td>
-                    <td>Advancements in Probabalistic ML, Programming Models for ML, Causality</td>
-                    <td></td>
-                </tr>
-                <tr class="s22">
-                    <td>*CS299r</td>
-                    <td>Special Topics in Computer Science</td>
-                    <td></td>
-                </tr>
-                <tr class="s22">
-                    <td>GENED1110</td>
-                    <td>Classical Mythology</td>
-                    <td></td>
-                </tr>
-                <tr class="s22">
-                    <td>LING83</td>
-                    <td>Language, Structure, and Cognition</td>
-                    <td></td>
-                </tr>
-                <tr><td style="border: none; padding-bottom: 1rem"></td></tr>
-
-                
-                <tr onclick="hideCourses('f21')">
-                    <th colspan="3">Fall 2021</th>
-                </tr>
-                <tr class="f21">
-                    <td>*AM207</td>
-                    <td>Advanced Scientific Computing: Stochastic Methods for Data Analysis, Inference and Optimization</td>
-                    <td></td>
-                </tr>
-                <tr class="f21">
-                    <td>CS153</td>
-                    <td>Compilers</td>
-                    <td></td>
-                </tr>
-                <tr class="f21">
-                    <td>*CS242</td>
-                    <td>Computing at Scale</td>
-                    <td></td>
-                </tr>
-                <tr class="f21">
-                    <td>*CS282br</td>
-                    <td>Adaptive Methods in Machine Learning</td>
-                    <td></td>
-                </tr>
-                <tr class="f21">
-                    <td>*CS282r</td>
-                    <td>Task-focused Generative Models and Inference</td>
-                    <td></td>
-                </tr>
-                <tr class="f21">
-                    <td>GENED1038</td>
-                    <td>Sleep</td>
-                    <td></td>
-                </tr>
-                <tr><td style="border: none; padding-bottom: 1rem"></td></tr>
+            <div id="courses" class="section">
+                <h1>Courses</h1>
+                <p>Matthew takes a lot of courses. Historically, he has found Harvard's graduate machine learning courses most interesting. Since completing the requirements for his Master's degree in his Sophomore year, he's moved towards coursework that will enrich his linguistics research.</p>
+                <br>
+                <p><b>*</b> graduate level</p>
+                <br>
+                <br>
+                <table>
+                    <colgroup>
+                        <col style="width:8em">
+                        <col style="width:max-context">
+                        <col style="width:5em; text-align: right;">
+                        </colgroup>                    
+                    <tr onclick="hideCourses('f22')">
+                        <th colspan="3">Fall 2022</th>
+                    </tr>
+                    <tr class="f22">
+                        <td>CS288*</td>
+                        <td>AI for Social Impact</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f22">
+                        <td>CS299r*</td>
+                        <td>Special Topics: Morphological and Syntactic Parsing</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f22">
+                        <td>EMR152</td>
+                        <td>Memory and Diaspora</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f22">
+                        <td>LING91r</td>
+                        <td>Supervised Reading and Research</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f22">
+                        <td>MODMDEST103</td>
+                        <td>History of Modern Iran</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f22">
+                        <td>NEC91r</td>
+                        <td>Advanced Neo-Aramaic Morphology and Syntax</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f22">
+                        <td>NEC98a</td>
+                        <td>Tutorial - Junior Year</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f22">
+                        <td>SYRIAC AA</td>
+                        <td>Elementary Syriac I</td>
+                        <td></td>
+                    </tr>
+                    <tr><td style="border: none; padding-bottom: 1rem"></td></tr>
 
 
-                <tr onclick="hideCourses('s21')">
-                    <th colspan="3">Spring 2021</th>
-                </tr>
-                <tr class="s21">
-                    <td>CS51</td>
-                    <td>Abstraction and Design in Computation</td>
-                    <td></td>
-                </tr>
-                <tr class="s21">
-                    <td>CS124</td>
-                    <td>Data Structures and Algorithms</td>
-                    <td></td>
-                </tr>
-                <tr class="s21">
-                    <td>EXPOS20</td>
-                    <td>Society and the Witch</td>
-                    <td></td>
-                </tr>
-                <tr class="s21">
-                    <td>MATH22b</td>
-                    <td>Vector Calculus and Linear Algebra II</td>
-                    <td></td>
-                </tr>
-                <tr class="s21">
-                    <td>PERSIAN AB</td>
-                    <td>Elementary Persian II</td>
-                    <td></td>
-                </tr>
-                <tr class="s21">
-                    <td>CS181</td>
-                    <td>Machine Learning</td>
-                    <td>[audited]</td>
-                </tr>
-                <tr><td style="border: none; padding-bottom: 1rem"></td></tr>
+                    <tr onclick="hideCourses('s22')">
+                        <th colspan="3">Spring 2022</th>
+                    </tr>
+                    <tr class="s22">
+                        <td>*CS205</td>
+                        <td>High Performance Computing for Science and Engineering</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s22">
+                        <td>*CS231</td>
+                        <td>Quantum Computation and Quantum Complexity</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s22">
+                        <td>*CS282r</td>
+                        <td>Advancements in Probabalistic ML, Programming Models for ML, Causality</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s22">
+                        <td>*CS299r</td>
+                        <td>Special Topics: Extremeley Low-Resource Speech Recognition</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s22">
+                        <td>GENED1110</td>
+                        <td>Classical Mythology</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s22">
+                        <td>LING83</td>
+                        <td>Language, Structure, and Cognition</td>
+                        <td></td>
+                    </tr>
+                    <tr><td style="border: none; padding-bottom: 1rem"></td></tr>
 
-
-                <tr onclick="hideCourses('f20')">
-                    <th colspan="3">Fall 2020</th>
-                </tr>
-                <tr class="f20">
-                    <td>CS50</td>
-                    <td>Introduction to Computer Science</td>
-                    <td></td>
-                </tr>
-                <tr class="f20">
-                    <td>FRSEMR34X</td>
-                    <td>Language and Prehistory</td>
-                    <td></td>
-                </tr>
-                <tr class="f20">
-                    <td>MATH22a</td>
-                    <td>Vector Calculus and Linear Algebra I</td>
-                    <td></td>
-                </tr>
-                <tr class="f20">
-                    <td>PERSIAN AA</td>
-                    <td>Elementary Persian I</td>
-                    <td></td>
-                </tr>
-
-                <script>
-                    const hideCourses = semesterId =>
-                        document.querySelectorAll('.' + semesterId)
-                                .forEach(e => e.classList.toggle('hide'))
                     
-                    hideCourses('s22')
-                    hideCourses('f21')
-                    hideCourses('s21')
-                    hideCourses('f20')
-                </script>
-            </table>
+                    <tr onclick="hideCourses('f21')">
+                        <th colspan="3">Fall 2021</th>
+                    </tr>
+                    <tr class="f21">
+                        <td>*AM207</td>
+                        <td>Advanced Scientific Computing: Stochastic Methods for Data Analysis, Inference and Optimization</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f21">
+                        <td>CS153</td>
+                        <td>Compilers</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f21">
+                        <td>*CS242</td>
+                        <td>Computing at Scale</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f21">
+                        <td>*CS282br</td>
+                        <td>Adaptive Methods in Machine Learning</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f21">
+                        <td>*CS282r</td>
+                        <td>Task-focused Generative Models and Inference</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f21">
+                        <td>GENED1038</td>
+                        <td>Sleep</td>
+                        <td></td>
+                    </tr>
+                    <tr><td style="border: none; padding-bottom: 1rem"></td></tr>
+
+
+                    <tr onclick="hideCourses('s21')">
+                        <th colspan="3">Spring 2021</th>
+                    </tr>
+                    <tr class="s21">
+                        <td>CS51</td>
+                        <td>Abstraction and Design in Computation</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s21">
+                        <td>CS124</td>
+                        <td>Data Structures and Algorithms</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s21">
+                        <td>EXPOS20</td>
+                        <td>Society and the Witch</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s21">
+                        <td>MATH22b</td>
+                        <td>Vector Calculus and Linear Algebra II</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s21">
+                        <td>PERSIAN AB</td>
+                        <td>Elementary Persian II</td>
+                        <td></td>
+                    </tr>
+                    <tr class="s21">
+                        <td>CS181</td>
+                        <td>Machine Learning</td>
+                        <td><i>audited</i></td>
+                    </tr>
+                    <tr><td style="border: none; padding-bottom: 1rem"></td></tr>
+
+
+                    <tr onclick="hideCourses('f20')">
+                        <th colspan="3">Fall 2020</th>
+                    </tr>
+                    <tr class="f20">
+                        <td>CS50</td>
+                        <td>Introduction to Computer Science</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f20">
+                        <td>FRSEMR34X</td>
+                        <td>Language and Prehistory</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f20">
+                        <td>MATH22a</td>
+                        <td>Vector Calculus and Linear Algebra I</td>
+                        <td></td>
+                    </tr>
+                    <tr class="f20">
+                        <td>PERSIAN AA</td>
+                        <td>Elementary Persian I</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="assyrian" class="section">
+                <h1>Assyrian Stuff</h1>
+            </div>
+
+            <div id="footer">
+                <span>
+                    Reach me at <a href="mailto:matthewnazari@college.harvard.edu">matthewnazari@college.harvard.edu</a>
+                </span>
+            </div>
         </div>
 
-        <div id="about" class="section">
-            <h1>What I'm doing</h1>
-
-            <!-- <table>
-                <tr>
-                    <th>Computer Science</th>
-                    <th>both</th>
-                    <th>Linguisics</th>
-                </tr>
-                <tr>
-                    <td>Machine Learning</td>
-                    <td>Preserving Neo-Aramaic</td>
-                    <td>Documentation and Linguistics</td>
-                </tr>
-            </table> -->
-
-            <h2>AI and Machine Learning</h2>
-            I'm studying to one day do a PhD. I finished my M.S. requirements Sophomore year and since then have been focussing on applied projects, lab research, teaching, and peer-advising.
-            <ul>
-                <li>Mentoring graduate students on their final capstone projects as a TF for AC 297</li>
-                <li>Researching Bayesian model selection</li>
-                <li>Captain of Peer Concentration Advising team</li>
-            </ul>
-
-            <h2>Language Conservation</h2>
-
-            On the language conservation side of things, I am 
-            <ul>
-                <li>Learning Classical Syriac</li>
-                <li>Documenting the grammatical features of the Neo-Aramaic Dialect of the Chaldeans of Sanandaj</li>
-            </ul>
-
-            <h2>The Intersection</h2>
-            <ul>
-                <li>Building speech and translation datasets for Neo-Aramaic through crowdsourcing</li>
-                <li>Developing a pan-dialectal morphological and syntactic glosser for Neo-Aramaic</li>
-            </ul>
-        </div>
-
-
-        <div id="footer">
-            <span>
-                Reach me at <a href="mailto:matthewnazari@college.harvard.edu">matthewnazari@college.harvard.edu</a>
-            </span>
-        </div>
-    </div>
+        <script src="script.js"></script>
+    </body>
 </html>
