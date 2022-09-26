@@ -245,15 +245,16 @@ a:hover {
   
 
 
-@media (pointer:none), (pointer:coarse) {
+@media {
     html {
-        font-size: 10pt;
+        font-size: 15pt;
     }
 
     body {
         flex-direction: column;
         padding: 2rem;
         width: 100vw;
+        gap: 3rem;
     }
 
     #side {
@@ -263,6 +264,7 @@ a:hover {
         position: static;
         display: flex;
         flex-direction: row;
+        justify-content: center;
         gap: 4rem;
         padding: 0;
     }
@@ -285,12 +287,17 @@ a:hover {
         flex-direction: column;
     }
 
+    #details h2 {
+        font-size: 1.65rem;
+    }
+
     .detail > :not(h2) {
         display: none;
     }
 
     #nav {
         justify-content: space-between;
+        padding: 1rem 0rem;
     }
 
     #main {
