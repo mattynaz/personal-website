@@ -296,7 +296,8 @@ a:hover {
     }
 
     #nav {
-        justify-content: space-between;
+        justify-content: center;
+        gap: 5rem;
         padding: 1rem 0rem;
     }
 
