@@ -244,10 +244,9 @@ a:hover {
 }
   
 
-
-@media {
+@media (pointer:none), (pointer:coarse) {
     html {
-        font-size: 15pt;
+        font-size: 18pt;
     }
 
     body {
