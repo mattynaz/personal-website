@@ -22,7 +22,7 @@ names = [
     'Մեթյու Նազարյան',
 ]
 
-fontSizes = [2.25, 5, 3.5, 2.25]
+fontSizes = [2.5, 5, 3.5, 2.25]
 
 const nameElem = document.querySelector('#side #name')
 
@@ -54,12 +54,17 @@ const typeName = async name => {
 }
 
 let iteration = 0
+
+setTimeout(_ => {
+    nameElem.style.fontSize = fontSizes[0] + 'em'
+    typeName(names[0])
+}, 500)
+
 setInterval(_ => {
     iteration = (iteration + 1) % names.length
     deleteName()
     setTimeout(_ => {
             nameElem.style.fontSize = fontSizes[iteration] + 'em'
             typeName(names[iteration])
-        }
-    , 1000)
+        }, 1000)
 }, 7000)
