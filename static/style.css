@@ -1,6 +1,6 @@
 @font-face {
     font-family: syriac;
-    src: url(syriac.ttf);
+    src: url(/static/syriac.ttf);
 }
 
 ::selection {
@@ -45,11 +45,6 @@ h1 {
 .section {
     padding-top: 3rem;
 }
-
-.section p {
-    /* margin-bottom: 2rem; */
-}
-
 
 #footer {
     margin-top: 10rem;
@@ -132,9 +127,6 @@ a:hover {
     font-style: italic;
 }
 
-
-
-
 #main {
     width: 45rem;
     min-width: 45rem;
@@ -182,14 +174,6 @@ a:hover {
     transition: all 200ms;
 }
 
-/* #about table td:hover {
-    box-shadow: 0.8rem 0.8rem 0rem 0rem black;
-} */
-
-#about table tr:last-child {
-    /* box-shadow: 0.6rem 0.6rem 0rem 0rem black;    */
-}
-
 #courses table tr {
     line-height: 1.1em;
 }
@@ -201,7 +185,6 @@ a:hover {
 #courses table td {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    /* vertical-align: baseline; */
     border-top: 0.1rem solid black;
 }
 
@@ -243,7 +226,7 @@ a:hover {
         justify-content: baseline;
     }
 }
-  
+
 
 @media (pointer:none), (pointer:coarse) {
     html {
