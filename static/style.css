@@ -145,15 +145,16 @@ a:hover {
     top: 0;
 }
 
-#nav a {
+#nav span {
     color: black;
     font-weight: bold;
     text-decoration: none;
     text-decoration-thickness: 0.1rem;
     white-space: nowrap;
+    cursor: pointer;
 }
 
-#nav a:hover {
+#nav span:hover {
     color: #cd5050;
 }
 
