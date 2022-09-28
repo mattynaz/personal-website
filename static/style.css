@@ -172,7 +172,6 @@ a:hover {
     padding: 0.5rem 1rem;
     background: white;
     box-shadow: 0.6rem 0.6rem 0rem 0rem black;
-    transition: all 200ms;
 }
 
 #courses table tr {
