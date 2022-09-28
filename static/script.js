@@ -2,6 +2,7 @@ const switchSection = sectionId => {
     document.querySelectorAll('.section')
             .forEach(e => e.classList.add('hide'))
     document.querySelector('#' + sectionId).classList.remove('hide')
+    document.querySelector('#main').scrollIntoView()
 }
 
 switchSection('about')
