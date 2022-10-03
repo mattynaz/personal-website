@@ -162,16 +162,21 @@ a:hover {
     padding-right: 1.5rem;
 }
 
+#about table {
+    width: 95%;
+    margin: 0 auto;
+}
+
 #about table th {
     text-align: center;
 }
 
 #about table td {
-    border: 0.15rem solid black;
+    border: 0.2rem solid black;
     width: 32%;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1.5rem;
     background: white;
-    box-shadow: 0.6rem 0.6rem 0rem 0rem black;
+    box-shadow: 0.75rem 0.75rem 0rem 0rem black;
 }
 
 #courses table tr {
